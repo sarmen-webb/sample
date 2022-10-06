@@ -21,7 +21,7 @@ changeBuildType(RelativeId("Build")) {
         insert(0) {
             script {
                 name = "CustomTab"
-                scriptContent = """echo "hello world" >> index.html"""
+                scriptContent = """echo "hello world this is my new job" > index.html"""
             }
         }
     }
