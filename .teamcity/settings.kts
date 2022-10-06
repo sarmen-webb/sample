@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -35,6 +36,15 @@ object Build : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    steps {
+        nodeJS {
+            shellScript = "npm ci"
+        }
+        nodeJS {
+            shellScript = "npm run test"
+        }
     }
 
     triggers {
